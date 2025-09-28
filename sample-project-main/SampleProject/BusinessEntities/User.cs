@@ -60,11 +60,11 @@ namespace BusinessEntities
 
         public void SetEmail(string email)
         {
-            if (string.IsNullOrEmpty(email))
+            if (!string.IsNullOrEmpty(email))
             {
-                throw new ArgumentNullException("Name was not provided.");
+                _email = email;
             }
-            _email = email;
+            // Do not update the email if null.
         }
 
         public void SetType(UserTypes type)
@@ -77,9 +77,13 @@ namespace BusinessEntities
             _email = _name;
         }
 
-        public void SetMonthlySalary(decimal? monthlySalary)
+        public void SetMonthlySalary(decimal? annualSalary)
         {
-            _monthlySalary = monthlySalary;
+            if(annualSalary.HasValue)
+            {
+                _monthlySalary = annualSalary / 12;
+            }
+            
         }
 
         public void SetTags(IEnumerable<string> tags)
