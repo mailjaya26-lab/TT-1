@@ -530,7 +530,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-		  "raw": "{\n  \"userId\": \"9422740e-6426-4c46-8445-3f5274a62424\",\n  \"productsOrdered\": {\n    \"8722740e-6426-4c46-8445-3f5274a62424\": 2,\n    \"1422740e-6426-4c46-8445-3f5274a62424\": 5\n  }\n}"
+		  "raw": "{\n  \"userId\": \"9422740e-6426-4c46-8445-3f5274a62424\",\n  \"productsOrdered\": {\n    \"8722740e-6426-4c46-8445-3f5274a62424\": 2,\n    \"9422740e-6426-4c46-8445-3f5274a62424\": 5\n  }\n}"
                 },
                 "url": {
                   "raw": "http://localhost:49834/product/2222220e-6426-4c46-8445-3f5274a62424/create",
@@ -579,27 +579,7 @@
               "response": []
            },
 
-
-
- 	 {
-              "name": "Get All Orders",
-              "request": {
-                "method": "GET",
-                "url": {
-                  "raw": "http://localhost:49834/order/list",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "49834",
-                  "path": [
-                    "order",
-                    "list"
-                  ]
-                }
-              },
-              "response": []
-            },
+	
 {
           "name": "Delete All Orders",
           "request": {
@@ -642,6 +622,26 @@
           },
           "response": []
         },
+
+ 	{
+              "name": "Get All Orders",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "http://localhost:49834/order/list",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "49834",
+                  "path": [
+                    "order",
+                    "list"
+                  ]
+                }
+              },
+              "response": []
+            },
 
 	{
           "name": "Get Order by OrderId",
