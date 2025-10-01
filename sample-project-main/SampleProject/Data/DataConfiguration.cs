@@ -1,11 +1,12 @@
-﻿using System.Reflection;
-using BusinessEntities;
+﻿using BusinessEntities;
 using Common;
+using Data.Repositories;
 using Raven.Client;
 using Raven.Client.Document;
 using Raven.Client.Indexes;
 using Raven.Imports.Newtonsoft.Json;
 using SimpleInjector;
+using System.Reflection;
 
 namespace Data
 {
@@ -29,6 +30,10 @@ namespace Data
                                    session.Advanced.MaxNumberOfRequestsPerSession = 5000;
                                    return session;
                                }, lifestyle);
+
+            container.RegisterSingleton<ProductStore>();
+            container.RegisterSingleton<OrderDetails>();
+
         }
 
         private static IDocumentStore InitializeDocumentStore(Assembly assembly, bool createIndexes)
