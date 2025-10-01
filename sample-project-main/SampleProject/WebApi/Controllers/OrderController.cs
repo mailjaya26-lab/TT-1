@@ -48,17 +48,17 @@ namespace WebApi.Controllers
         [HttpGet]
         public HttpResponseMessage GetOrders()
         {
-            var products = _getOrderService.GetOrderList()
+            var orders = _getOrderService.GetOrderList()
                                        .ToList();
-            return Found(products);
+            return Found(orders);
         }
 
         [Route("list/user")]
         [HttpGet]
-        public HttpResponseMessage GetOrderByUser(Guid userId)
+        public HttpResponseMessage GetOrderByUser(Guid user)
         {
             var orders = _getOrderService.GetOrderList()
-                                .Where(pr => pr.UserId == userId)
+                                .Where(pr => pr.UserId == user)
                                        .Select(q => new OrderData(q))
                                        .ToList();
             return Found(orders);
